@@ -8,6 +8,8 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.MainController{})
+	// beego.Router("/chat/getuserlist", &controllers.GetUserListControllers{}, "post:Post")
+	// beego.Router("/chat/getroomlist", &controllers.GetRoomListControllers{}, "post:Post")
 	chatNS := beego.NewNamespace("/chat/",
 		//GetRoomListControllers 获取房间列表
 		beego.NSNamespace("/getroomlist",

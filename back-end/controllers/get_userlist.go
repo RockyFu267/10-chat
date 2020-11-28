@@ -1,8 +1,6 @@
 package controllers
 
 import (
-	"encoding/json"
-
 	"github.com/astaxie/beego"
 )
 
@@ -21,18 +19,6 @@ type returnUserListJSON struct {
 //Post 获取用户列表
 func (p *GetUserListControllers) Post() {
 	var returnData returnUserListJSON
-	var PostData PostPubData
-	defer p.Ctx.Request.Body.Close()
-	//var err error
-	err := json.NewDecoder(p.Ctx.Request.Body).Decode(&PostData)
-	if err != nil {
-		beego.Error(err, PostData)
-		returnData.Code = 500
-		returnData.Error = err.Error()
-		p.Data["json"] = returnData
-		p.Ctx.Output.JSON(returnData, true, true)
-		return
-	}
 	returnData.Data = append(returnData.Data, "fuck", "fuck01")
 	returnData.Code = 200
 	returnData.Error = ""

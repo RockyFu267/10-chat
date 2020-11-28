@@ -8,7 +8,7 @@ import (
 func init() {
 
 	//GetRoomListControllers
-	beego.GlobalControllerRouter["Hydrogen/controllers:GetRoomListControllers"] = append(beego.GlobalControllerRouter["Hydrogen/controllers:GetRoomListControllers"],
+	beego.GlobalControllerRouter["back-end/controllers:GetRoomListControllers"] = append(beego.GlobalControllerRouter["back-end/controllers:GetRoomListControllers"],
 		beego.ControllerComments{
 			Method:           "Post",
 			Router:           `/`,
@@ -16,7 +16,7 @@ func init() {
 			MethodParams:     param.Make(),
 			Params:           nil})
 	//GetUserListControllers
-	beego.GlobalControllerRouter["Hydrogen/controllers:GetUserListControllers"] = append(beego.GlobalControllerRouter["Hydrogen/controllers:GetUserListControllers"],
+	beego.GlobalControllerRouter["back-end/controllers:GetUserListControllers"] = append(beego.GlobalControllerRouter["back-end/controllers:GetUserListControllers"],
 		beego.ControllerComments{
 			Method:           "Post",
 			Router:           `/`,
